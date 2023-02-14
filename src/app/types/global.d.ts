@@ -1,8 +1,8 @@
 declare module '*.scss' {
-    interface IClassName {
+    interface IClassNames {
         [className: string]: string
     }
-    const classNames: IClassName;
+    const classNames: IClassNames;
     export = classNames;
 }
 
@@ -16,4 +16,4 @@ declare module '*.svg' {
     export default SVG;
 }
 
-declare const __IS_DEV__:boolean;
+declare const __IS_DEV__: boolean;

@@ -11,7 +11,7 @@ export default {
     // bail: 0,
 
     // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "C:\\Users\\eafed\\AppData\\Local\\Temp\\jest",
+    // cacheDirectory: "C:\\Users\\tim\\AppData\\Local\\Temp\\jest",
 
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
@@ -19,11 +19,6 @@ export default {
     coveragePathIgnorePatterns: [
         '\\\\node_modules\\\\',
     ],
-
-    moduleDirectories: [
-        'node_modules',
-    ],
-
     moduleFileExtensions: [
         'js',
         'jsx',
@@ -32,11 +27,14 @@ export default {
         'json',
         'node',
     ],
-    rootDir: '../../',
+    moduleDirectories: [
+        'node_modules',
+    ],
     testMatch: [
+        // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
-
+    rootDir: '../../',
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
@@ -82,6 +80,10 @@ export default {
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",
+
+    // An array of directory names to be searched recursively up from the requiring module's location
+
+    // An array of file extensions your modules use
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
