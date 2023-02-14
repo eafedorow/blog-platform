@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { BugButton } from 'app/providers/ErrorBoundary';
 
 const MainPage = () => {
+    const [error, setError] = useState(false);
     const { t } = useTranslation();
+
+    useEffect(() => {
+        if (error) {
+            throw new Error();
+        }
+    }, [error]);
 
     return (
         <div>
+            <BugButton />
             {t('Главная страница')}
         </div>
     );
