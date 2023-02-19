@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BugButton } from 'app/providers/ErrorBoundary';
+import { Counter } from 'entities/Counter';
 
 const MainPage = () => {
     const [error, setError] = useState(false);
@@ -14,7 +15,6 @@ const MainPage = () => {
 
     return (
         <div>
-            <BugButton />
             {t('Главная страница')}
         </div>
     );
