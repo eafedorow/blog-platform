@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/providers/ErrorBoundary';
-import { Counter } from 'entities/Counter';
+import { Input } from 'shared/ui/Input/Input';
 
 const MainPage = () => {
-    const [error, setError] = useState(false);
     const { t } = useTranslation();
+    const [value, setValue] = useState('');
 
-    useEffect(() => {
-        if (error) {
-            throw new Error();
-        }
-    }, [error]);
+    const onChange = (val: string) => {
+        setValue(val);
+    };
 
     return (
         <div>
             {t('Главная страница')}
+            <Input
+                placeholder="Введите текст"
+                value={value}
+                onChange={onChange}
+            />
         </div>
     );
 };
