@@ -7,6 +7,7 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icons/notes.svg';
 import MainIcon from 'shared/assets/icons/home.svg';
+import { useTranslation } from 'react-i18next';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -15,6 +16,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
+    const { t } = useTranslation();
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
@@ -43,7 +45,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 >
                     <MainIcon className={cls.icon} />
                     <span className={cls.link}>
-                        Главная
+                        {t('Главная')}
                     </span>
                 </AppLink>
 
@@ -54,7 +56,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 >
                     <AboutIcon className={cls.icon} />
                     <span className={cls.link}>
-                        О сайте
+                        {t('О сайте')}
                     </span>
                 </AppLink>
 
